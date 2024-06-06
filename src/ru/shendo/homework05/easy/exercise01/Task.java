@@ -12,7 +12,7 @@ public class Task {
     }
 
     public static int countEvenNumbersSum(int numberFrom, int numberTo) {
-        return IntStream.range(numberFrom, numberTo + 1)
+        return IntStream.rangeClosed(numberFrom, numberTo)
                 .filter(number -> number % 2 == 0)
                 .sum();
     }

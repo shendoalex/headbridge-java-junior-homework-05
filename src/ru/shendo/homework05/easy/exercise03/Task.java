@@ -13,7 +13,7 @@ import java.util.Map;
 
 public class Task {
     public static void main(String[] args) {
-        List<IBook> libraryInList = new ArrayList<>();
+        List<Book> libraryInList = new ArrayList<>();
         libraryInList.add(new Book(1, "Tltle1", "Author1", 100));
         libraryInList.add(new Book(2, "Tltle2", "Author2", 200));
         libraryInList.add(new Book(3, "Tltle3", "Author3", 300));
@@ -22,7 +22,8 @@ public class Task {
         System.out.println(libraryInList);
         System.out.println();
 
-        Map<Integer, IBook> libraryInMap = BookOrganizer.organizeBooks(libraryInList);
+        BookOrganizer bookOrganizer = new BookOrganizer();
+        Map<Integer, Book> libraryInMap = bookOrganizer.organizeBooks(libraryInList);
 
         System.out.println(libraryInMap);
     }

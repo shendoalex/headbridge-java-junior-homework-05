@@ -10,7 +10,10 @@ import java.util.Map;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
-public class LibraryUtil {
+public final class LibraryUtil {
+
+    private LibraryUtil() {
+    }
 
     public static Optional<IAuthor> findAuthorWithMostBooks(ILibrary library) {
 
@@ -18,7 +21,8 @@ public class LibraryUtil {
                 .collect(Collectors.groupingBy(IBook::getAuthor));
 
         return mapAuthorBooks.entrySet().stream()
-                .max(Comparator.comparingInt(key -> key.getValue().size())).map(Map.Entry::getKey);
+                .max(Comparator.comparingInt(key -> key.getValue().size()))
+                .map(Map.Entry::getKey);
 
     }
 }

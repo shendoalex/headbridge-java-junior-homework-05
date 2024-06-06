@@ -1,6 +1,6 @@
 package ru.shendo.homework05.easy.exercise03;
 
-public class Book implements IBook{
+public class Book {
     private int id;
     private String title;
     private String author;

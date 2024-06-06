@@ -4,9 +4,11 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
-public class BookOrganizer {
-    public static Map<Integer, IBook> organizeBooks(List<IBook> books) {
+public class BookOrganizer implements IBookOrganizer {
+
+    public Map<Integer, Book> organizeBooks(List<Book> books) {
         return books.stream()
-                .collect(Collectors.toMap(IBook::getId, IBook -> IBook));
+                .collect(Collectors.toMap(Book::getId, Book -> Book));
     }
+
 }
