@@ -18,10 +18,12 @@ public class Task {
         libraryInList.add(new Book(2, "Tltle2", "Author2", 200));
         libraryInList.add(new Book(3, "Tltle3", "Author3", 300));
         libraryInList.add(new Book(4, "Tltle4", "Author4", 400));
+
         System.out.println(libraryInList);
         System.out.println();
 
         Map<Integer, IBook> libraryInMap = BookOrganizer.organizeBooks(libraryInList);
+
         System.out.println(libraryInMap);
     }
 }

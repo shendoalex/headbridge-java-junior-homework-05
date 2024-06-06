@@ -10,18 +10,14 @@ import java.util.List;
 
 public class Task {
     public static void main(String[] args) {
+
         List<IProduct> products = Arrays.asList(
                 new Product("Product1", 10.0, 3),
                 new Product("Product2", 20.0, 2),
                 new Product("Product3", 30.0, 5)
         );
-        System.out.println(getCostOfAllProducts(products));
+
+        System.out.println(ProductUtil.getCostOfAllProducts(products));
     }
 
-    public static double getCostOfAllProducts(List<IProduct> products) {
-        return products.stream()
-                .map(product -> product.getPrice() * product.getQuantity())
-                .mapToDouble(Double::doubleValue)
-                .sum();
-    }
 }
