@@ -8,7 +8,7 @@ public class BookOrganizer implements IBookOrganizer {
 
     public Map<Integer, Book> organizeBooks(List<Book> books) {
         return books.stream()
-                .collect(Collectors.toMap(Book::getId, Book -> Book));
+                .collect(Collectors.toMap(Book::getId, book -> book));
     }
 
 }

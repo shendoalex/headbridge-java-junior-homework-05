@@ -1,5 +1,7 @@
 package ru.shendo.homework05.easy.exercise03;
 
+import java.util.Objects;
+
 public class Book {
     private int id;
     private String title;
@@ -39,4 +41,16 @@ public class Book {
                 '}' + "\n";
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Book book = (Book) o;
+        return id == book.id && pageCount == book.pageCount && Objects.equals(title, book.title) && Objects.equals(author, book.author);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, title, author, pageCount);
+    }
 }

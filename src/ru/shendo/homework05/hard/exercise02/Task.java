@@ -2,7 +2,6 @@ package ru.shendo.homework05.hard.exercise02;
 
 import java.util.Arrays;
 import java.util.List;
-import java.util.Optional;
 
 /*
 Реализуйте приложение для анализа текста.
@@ -20,7 +19,7 @@ public class Task {
                 "Hello world is again!"
         );
 
-        Optional<List<String>> uniqueWords = TextUtil.analyzeText(inputText);
+        List<String> uniqueWords = TextUtil.analyzeText(inputText);
         System.out.println(uniqueWords);
     }
 }
