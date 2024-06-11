@@ -17,10 +17,16 @@ public final class LibraryUtil {
 
     public static Optional<IAuthor> findAuthorWithMostBooks(ILibrary library) {
 
-        Map<IAuthor, List<IBook>> mapAuthorBooks = library.getBooks().stream()
+        if (library == null) {
+            return Optional.empty();
+        }
+
+        Map<IAuthor, List<IBook>> mapAuthorBooks = library.getBooks()
+                .stream()
                 .collect(Collectors.groupingBy(IBook::getAuthor));
 
-        return mapAuthorBooks.entrySet().stream()
+        return mapAuthorBooks.entrySet()
+                .stream()
                 .max(Comparator.comparingInt(key -> key.getValue().size()))
                 .map(Map.Entry::getKey);
 

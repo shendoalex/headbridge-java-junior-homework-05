@@ -1,11 +1,13 @@
 package ru.shendo.homework05.medium.exercise02;
 
+import java.math.BigDecimal;
+
 public class Product implements IProduct {
     private String name;
-    private double price;
+    private BigDecimal price;
     private int quantity;
 
-    public Product(String name, double price, int quantity) {
+    public Product(String name, BigDecimal price, int quantity) {
         this.name = name;
         this.price = price;
         this.quantity = quantity;
@@ -17,7 +19,7 @@ public class Product implements IProduct {
     }
 
     @Override
-    public double getPrice() {
+    public BigDecimal getPrice() {
         return price;
     }
 
